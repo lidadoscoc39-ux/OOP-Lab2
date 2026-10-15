@@ -19,7 +19,7 @@ namespace WpfApp2
         {
             InitializeComponent();
 
-            // Приховуємо поля для коренів при запуску
+            
             labelX1.Visibility = Visibility.Hidden;
             x1.Visibility = Visibility.Hidden;
             labelX2.Visibility = Visibility.Hidden;
@@ -30,7 +30,7 @@ namespace WpfApp2
         {
             double aVal, bVal, cVal;
 
-            // Щоразу при натисканні спочатку ховаємо та очищуємо старі результати
+            
             labelX1.Visibility = Visibility.Hidden;
             x1.Visibility = Visibility.Hidden;
             labelX2.Visibility = Visibility.Hidden;
@@ -39,7 +39,7 @@ namespace WpfApp2
             x2.Text = string.Empty;
             d.Text = string.Empty;
 
-            // Перевірка коректності введення значень
+            
             if (!double.TryParse(a.Text, out aVal))
             {
                 MessageBox.Show("Помилка - некоректно введене значення a.");
@@ -56,24 +56,24 @@ namespace WpfApp2
                 return;
             }
 
-            // Перевірка на квадратне рівняння (a не повинно дорівнювати 0)
+            
             if (aVal == 0)
             {
                 MessageBox.Show("Це лінійне рівняння, а не квадратне (а = 0).");
                 return;
             }
 
-            // Обчислення дискримінанта
+            
             double dVal = bVal * bVal - 4 * aVal * cVal;
             d.Text = dVal.ToString();
 
-            // Аналіз дискримінанта
+            
             if (dVal > 0)
             {
                 double x1Val = (-bVal + Math.Sqrt(dVal)) / (2 * aVal);
                 double x2Val = (-bVal - Math.Sqrt(dVal)) / (2 * aVal);
 
-                // Показуємо обидва коренi
+                
                 labelX1.Visibility = Visibility.Visible;
                 x1.Visibility = Visibility.Visible;
                 labelX2.Visibility = Visibility.Visible;
@@ -86,10 +86,10 @@ namespace WpfApp2
             {
                 double xVal = -bVal / (2 * aVal);
 
-                // При D = 0 рівняння має один дійсний корінь (виводимо у поле x1)
+                
                 labelX1.Visibility = Visibility.Visible;
                 x1.Visibility = Visibility.Visible;
-                // Поле x2 залишається прихованим, оскільки другий корінь відсутній
+                
 
                 x1.Text = xVal.ToString("0.##");
             }

@@ -46,14 +46,14 @@ namespace WpfApp1
                 return;
             }
 
-            // Перевірка області визначення для логарифма (ln z суворо для z > 0)
+            
             if (zVal <= 0)
             {
                 MessageBox.Show("Значення z має бути більше за 0 (область визначення для ln z)!", "Помилка", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
-            // Перевірка на ділення на нуль у внутрішньому знаменнику (x - y)
+            
             if (xVal - yVal == 0)
             {
                 MessageBox.Show("Помилка: ділення на нуль, оскільки x дорівнює y!", "Помилка", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -62,7 +62,7 @@ namespace WpfApp1
 
             try
             {
-                // Обчислення за вашим варіантом
+                
                 double innerFraction = Math.Log(zVal) / (xVal - yVal);
                 double numerator = (yVal - xVal) * (Math.Cos(yVal) - innerFraction);
                 double denominator = 1.0 + Math.Pow(xVal - zVal, 2);

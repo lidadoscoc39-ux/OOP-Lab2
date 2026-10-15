@@ -10,7 +10,7 @@ namespace project
 
             double x, y, z;
 
-            // Зчитування x
+            
             while (true)
             {
                 Console.Write("Введіть х: ");
@@ -19,7 +19,7 @@ namespace project
                 Console.WriteLine("Помилка - некоректно введене значення.");
             }
 
-            // Зчитування y
+            
             while (true)
             {
                 Console.Write("Введіть y: ");
@@ -28,7 +28,7 @@ namespace project
                 Console.WriteLine("Помилка - некоректно введене значення.");
             }
 
-            // Зчитування z із перевіркою області визначення (z > 0 для логарифма)
+            
             while (true)
             {
                 Console.Write("Введіть z (більше 0): ");
@@ -45,14 +45,14 @@ namespace project
                 }
             }
 
-            // Перевірка на ділення на нуль у внутрішньому знаменнику (x - y)
+           
             if (x - y == 0)
             {
                 Console.WriteLine("Помилка: ділення на нуль (x дорівнює y у знаменнику дробу ln(z)/(x-y)).");
                 return;
             }
 
-            // Обчислення за вашою формулою
+            
             double innerFraction = Math.Log(z) / (x - y);
             double numerator = (y - x) * (Math.Cos(y) - innerFraction);
             double denominator = 1.0 + Math.Pow(x - z, 2);
